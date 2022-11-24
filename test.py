@@ -1,6 +1,9 @@
 import unittest
-from app import *
+import app
+
 class TestHello(unittest.TestCase):
+
+    print("Starting test with Unittest")
 
     def setUp(self):
         app.app.testing = True
@@ -22,5 +25,5 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         self.assertIn(bytearray(f"{name}", 'utf-8'), rv.data)
         
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()
